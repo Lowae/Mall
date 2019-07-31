@@ -1,14 +1,8 @@
 package com.hao.shoppingmall.home.fragment;
 
-import android.app.Application;
-import android.content.Context;
-import android.graphics.Color;
-import android.os.AsyncTask;
-import android.provider.SyncStateContract;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,13 +10,10 @@ import android.widget.Toast;
 
 import com.hao.shoppingmall.R;
 import com.hao.shoppingmall.base.BaseFragment;
-
-import java.io.IOException;
-import java.lang.ref.WeakReference;
-
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import com.hao.shoppingmall.home.adapter.HomeFragmentAdapter;
+import com.hao.shoppingmall.home.bean.ResultBeanData;
+import com.hao.shoppingmall.utils.Constants;
+import com.hao.shoppingmall.utils.OkHttpUtils;
 
 public class HomeFragment extends BaseFragment {
 
@@ -31,6 +22,10 @@ public class HomeFragment extends BaseFragment {
     private ImageView ib_top;
     private TextView tv_search_home;
     private TextView tv_message_home;
+
+    private HomeFragmentAdapter adapter;
+
+    private ResultBeanData.ResultBean resultBean;
 
     @Override
     public View initView() {
@@ -77,35 +72,21 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void getDataFromNet(){
-        String url = "http://192.168.3.15:8080/atguigu/json/HOME_URL.json";
-        new DataAsycnTask(mContext).execute(url);
-    }
-
-    private static class DataAsycnTask extends AsyncTask<String, Void, String>{
-
-        private WeakReference<Context> Reference;
-
-        DataAsycnTask(Context context){
-            Reference = new WeakReference<>(context);
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            try {
-                OkHttpClient client = new OkHttpClient();
-                Request request = new Request.Builder()
-                        .get()
-                        .url(strings[0])
-                        .build();
-                Response response = client.newCall(request).execute();
-                String data = response.body().string();
-                Log.e("TAG",data);
-                return data;
-            }catch (IOException e){
-                e.printStackTrace();
+        String url = Constants.HOME_URL;
+        OkHttpUtils.sendRequest(OkHttpUtils.createGetRequest(url), new OkHttpUtils.JsonCallback(new OkHttpUtils.DisposeDataHandle<>(new OkHttpUtils.DisposeDataListener<ResultBeanData>() {
+            @Override
+            public void onSuccess(ResultBeanData resultBeanData) {
+                resultBean = resultBeanData.getResult();
+                adapter = new HomeFragmentAdapter(mContext, resultBean);
+                rvHome.setAdapter(adapter);
+                rvHome.setLayoutManager(new GridLayoutManager(mContext, 1));
             }
-            return null;
-        }
-    }
 
+            @Override
+            public void onFailure(Exception e) {
+                Log.e("TAG", "Exception", e);
+            }
+        }, ResultBeanData.class)));
+
+    }
 }

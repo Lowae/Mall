@@ -1,11 +1,12 @@
 package com.hao.shoppingmall.app;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.hao.shoppingmall.R;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
     @BindView(R.id.frameLayout)
     FrameLayout frameLayout;
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        rgMain.check(R.id.rg_main);
+        rgMain.check(R.id.rb_home);
 
     }
 
