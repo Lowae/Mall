@@ -12,9 +12,6 @@ import com.hao.shoppingmall.type.bean.TagBean;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class TagGridViewAdapter extends BaseAdapter {
     private Context mContext;
     private List<TagBean.ResultBean> result;

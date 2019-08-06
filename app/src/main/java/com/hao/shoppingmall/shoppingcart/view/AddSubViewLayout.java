@@ -1,7 +1,6 @@
 package com.hao.shoppingmall.shoppingcart.view;
 
 import android.content.Context;
-import android.support.v7.widget.TintTypedArray;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -109,7 +108,7 @@ public class AddSubViewLayout extends LinearLayout implements View.OnClickListen
     }
 
     public interface OnNumberChangerListener{
-        public void onNumberChange(int value);
+        void onNumberChange(int value);
     }
 
     public void setOnNumberChangerListener(OnNumberChangerListener onNumberChangerListener) {

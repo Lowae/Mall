@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/goods"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".goods.GoodsInfoActivity"></activity>
+        <activity android:name=".goods.GoodsInfoActivity" />
         <activity android:name=".app.MainActivity" />
         <activity android:name=".app.WelcomeActivity">
             <intent-filter>

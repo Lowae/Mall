@@ -72,7 +72,7 @@ public class SeckillRecyclerViewAdapter extends RecyclerView.Adapter<SeckillRecy
     }
 
     public interface OnSeckillRecyclerViewClickListener{
-        public void onItemClick(int position);
+        void onItemClick(int position);
     }
 
     public void setOnSeckillRecyclerViewClickListener(OnSeckillRecyclerViewClickListener onSeckillRecyclerViewClickListener){

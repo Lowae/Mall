@@ -3,7 +3,6 @@ package com.hao.shoppingmall.utils;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 
@@ -119,8 +118,8 @@ public class OkHttpUtils {
     }
 
     public interface DisposeDataListener<T>{
-        public void onSuccess(T t);
+        void onSuccess(T t);
 
-        public void onFailure(Exception e);
+        void onFailure(Exception e);
     }
 }

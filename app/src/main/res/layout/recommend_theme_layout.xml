@@ -53,7 +53,8 @@
             android:text="确定"
             android:textColor="#4e4444"
             android:textSize="15sp"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:focusable="true" />
     </LinearLayout>
 
     <View

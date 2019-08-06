@@ -19,7 +19,6 @@ import com.bumptech.glide.Glide;
 import com.hao.shoppingmall.R;
 import com.hao.shoppingmall.goods.GoodsInfoActivity;
 import com.hao.shoppingmall.goods.page.Page;
-import com.hao.shoppingmall.goods.page.PageBehavior;
 import com.hao.shoppingmall.goods.page.PageContainer;
 import com.hao.shoppingmall.home.bean.GoodsBean;
 import com.hao.shoppingmall.utils.Constants;

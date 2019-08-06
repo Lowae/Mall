@@ -1,12 +1,9 @@
 package com.hao.shoppingmall.user.fragment;
 
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -14,7 +11,6 @@ import android.widget.TextView;
 
 import com.hao.shoppingmall.R;
 import com.hao.shoppingmall.base.BaseFragment;
-import com.hao.shoppingmall.home.adapter.HomeFragmentAdapter;
 import com.hao.shoppingmall.home.adapter.HotRecyclerViewAdapter;
 import com.hao.shoppingmall.home.bean.ResultBeanData;
 import com.hao.shoppingmall.home.decoration.HotRecyclerViewDecoration;

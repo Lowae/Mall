@@ -70,7 +70,7 @@ public class HotRecyclerViewAdapter extends RecyclerView.Adapter<HotRecyclerView
     }
 
     public interface OnHotRecyclerViewClickListener{
-        public void onItemClick(int position);
+        void onItemClick(int position);
     }
 
     public void setOnHotRecyclerViewClickListener(OnHotRecyclerViewClickListener onHotRecyclerViewClickListener){
