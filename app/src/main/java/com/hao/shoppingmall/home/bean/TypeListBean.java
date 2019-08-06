@@ -2,9 +2,6 @@ package com.hao.shoppingmall.home.bean;
 
 import java.util.List;
 
-/**
- * Created by Administrator on 2016/10/12.
- */
 public class TypeListBean {
 
     /**

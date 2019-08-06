@@ -29,9 +29,7 @@ import java.util.List;
 
 public class TypeRightAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context mContext;
-    /**
-     * 常用分类
-     */
+
     private List<TypeBean.ResultBean.ChildBean> child;
     /**
      * 热卖商品列表的数据

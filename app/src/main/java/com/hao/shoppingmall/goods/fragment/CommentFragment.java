@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 import com.hao.shoppingmall.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class CommentFragment extends Fragment {
 
 

@@ -1,7 +1,6 @@
 package com.hao.shoppingmall.home.adapter;
 
 import android.content.Context;
-import android.graphics.Rect;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.hao.shoppingmall.R;
 import com.hao.shoppingmall.home.bean.ResultBeanData;
 import com.hao.shoppingmall.utils.Constants;
@@ -24,7 +22,7 @@ public class HotRecyclerViewAdapter extends RecyclerView.Adapter<HotRecyclerView
 
     private OnHotRecyclerViewClickListener onHotRecyclerViewClickListener;
 
-    HotRecyclerViewAdapter(Context context, List<ResultBeanData.ResultBean.HotInfoBean> hot_info){
+    public HotRecyclerViewAdapter(Context context, List<ResultBeanData.ResultBean.HotInfoBean> hot_info){
         mContext =context;
         datas = hot_info;
     }

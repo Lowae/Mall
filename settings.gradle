@@ -1,1 +1,1 @@
-include ':app', ':addsubview'
+include ':app', ':addsubview', ':fungamerefresh'

@@ -21,7 +21,6 @@ import java.util.List;
 
 /**
  * 分类页面
- * A simple {@link Fragment} subclass.
  */
 public class ListFragment extends BaseFragment {
     private FrameLayout fl_list_container;

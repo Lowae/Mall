@@ -5,24 +5,65 @@
     android:layout_height="match_parent"
     tools:context=".home.fragment.HomeFragment">
 
-    <include
-        android:id="@+id/titlebar"
-        layout="@layout/titlebar" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_home"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <TextView
+                    android:id="@+id/tv_search_home"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_home_shape"
+                    android:drawableStart="@drawable/home_search_icon"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="输入搜索信息"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_message_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:drawableTop="@drawable/ic_menu_message"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="12sp"
+                    android:text="消息" />
+            </LinearLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <com.hitomi.refresh.view.FunGameRefreshView
+        android:id="@+id/refresh_fun_game"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/titlebar" />
+        android:layout_below="@id/titlebar">
 
-    <ImageButton
-        android:id="@+id/ib_top"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/top_btn"
-        android:visibility="gone" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             />
+
+    </com.hitomi.refresh.view.FunGameRefreshView>
+
+
+
 </RelativeLayout>

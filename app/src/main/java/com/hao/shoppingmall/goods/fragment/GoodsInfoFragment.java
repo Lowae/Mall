@@ -28,9 +28,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class GoodsInfoFragment extends Fragment {
 
 
@@ -91,18 +88,6 @@ public class GoodsInfoFragment extends Fragment {
 
         setWebViewData(goodsBean.getProduct_id());
 
-        PageContainer pageContainer = container;
-        pageContainer.setOnPageChanged(new PageBehavior.OnPageChanged() {
-            @Override
-            public void toTop() {
-
-            }
-
-            @Override
-            public void toBottom() {
-
-            }
-        });
     }
 
     private void setWebViewData(String product_id) {
